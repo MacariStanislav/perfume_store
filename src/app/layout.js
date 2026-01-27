@@ -1,12 +1,14 @@
-import Navbar from "@/compenents/navbar"
-
+import Navbar from "@/components/lib/navbar"
+import Footer from "@/components/lib/footer";
+import '@/styles/global.css'
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body >
-      <Navbar/>
+        <Navbar />
 
         {children}
+        <Footer />
       </body>
     </html>
   );
