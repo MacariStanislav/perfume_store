@@ -1,0 +1,137 @@
+.container__slider {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  height: 33rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: black;
+}
+
+.container__slider > button {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  color: whitesmoke;
+  font-size: 24px;
+}
+
+.container__slider > button:active {
+  color: black;
+}
+
+.slider__btn-next {
+  position: absolute;
+  right: 0;
+}
+
+.slider__btn-prev {
+  position: absolute;
+  left: 0;
+}
+
+.container__slider__links {
+  position: absolute;
+  display: flex;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+}
+
+.container__slider__links-small {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+  
+  border: 0;
+  background-color: transparent;
+  border: 1px solid grey;
+  transition: all 1s ease;
+  margin: 0 2px;
+}
+
+.container__slider__links-small-active {
+  background-image: linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+  width: 14px;
+  height: 14px;
+}
+
+.slider__item {
+  box-sizing: border-box;
+  min-width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: cover;
+  height: auto;
+  transform: translateX(0);
+  transition: transform 1s ease;
+}
+
+.slider__item-active-1 {
+  transform: translateX(0);
+}
+
+.slider__item-active-2 {
+  transform: translateX(-100%);
+}
+
+.slider__item-active-3 {
+  transform: translateX(-200%);
+}
+
+.slider__item-active-4 {
+  transform: translateX(-300%);
+}
+
+.slider__item-active-5 {
+  transform: translateX(-400%);
+}
+
+
+.slider__item img {
+  width: 100%;
+  height: auto;
+}
+
+.sliderText{
+position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-left: 6rem;
+  gap: 1.8rem;
+  top: 35%;
+  width: 50rem;
+  align-items: center;
+  justify-content: center;
+
+
+}
+.sliderTextTop{
+font-size: 2rem;
+font-weight: 600;
+ background-image:linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+.sliderTextBottom{
+font-size: 1.5rem;
+font-weight: 400;
+width: 14rem;
+display: flex;
+ background-image:linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+.right{
+  right: 5%;
+}

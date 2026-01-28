@@ -1,0 +1,96 @@
+.ofersList {
+    display: flex;
+    gap: 1.3rem;
+    height: 28.75rem;
+}
+
+.ofersStartText {
+    background-image: linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ofers {
+    display: flex;
+    margin: 3.1rem auto;
+    width: 89%;
+    flex-direction: column;
+    gap: 1.8rem;
+    font-size: 1.5rem;
+}
+
+.ofersElement {
+    position: relative;
+    overflow: hidden;
+}
+
+.ofersImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+}
+
+
+.ofersTopText {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(225, 211, 189, 1);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.ofersBottom {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.ofersBottomText {
+    color: rgba(225, 211, 189, 1);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.ofersButton {
+    padding: 0.8rem 4.5rem;
+    border: 1px solid rgba(214, 184, 141, 1);
+    border-radius: 4px;
+    background: rgba(43, 40, 37, 1);
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0px 0px 10px 2px rgba(184, 164, 142, 0.4);
+    transition: all 2s ease;
+
+
+
+}
+
+.ofersButton:hover {
+    background-image: linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+    border: 1px solid rgba(43, 40, 37, 1);
+
+}
+
+.ofersButton:hover span {
+    background-image: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: #000;
+    color: #000;
+}
+
+
+.ofersBottom span {
+    background-image: linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

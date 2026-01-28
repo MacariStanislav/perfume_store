@@ -1,16 +1,27 @@
 'use client'
-import React from 'react'
-import '@/styles/components/navbar.css'
+import React, { useEffect } from 'react'
 import TopNavbar from './TopNavbar'
 import BotomNavbar from './BotomNavbar'
-const Navbar = () => {
-    return (
-        <nav className='navbar'>
-            <TopNavbar />
-            <BotomNavbar />
+import '@/styles/components/navbar.css'
 
-        </nav>
-    )
+const Navbar = () => {
+
+  useEffect(() => {
+    const navbar = document.querySelector('.navbar')
+    const content = document.querySelector('.content')
+
+    if (navbar && content) {
+      const navbarHeight = navbar.offsetHeight
+      content.style.paddingTop = `${navbarHeight}px`
+    }
+  }, []) 
+
+  return (
+    <nav className="navbar">
+      <TopNavbar />
+      <BotomNavbar />
+    </nav>
+  )
 }
 
 export default Navbar
