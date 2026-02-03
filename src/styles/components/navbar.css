@@ -12,6 +12,83 @@
 
 }
 
+.navbar-mobile {
+    display: none;
+}
+
+.mobileNavbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+  position: fixed;
+    z-index: 1000;
+    width: 100%;
+backdrop-filter: blur(30px);
+    background-color:rgba(28, 26, 23, 0.3);
+
+}
+
+.mobileSaidbarButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid rgba(214, 184, 141, 1);
+    box-shadow: 0px 0px 10px 2px rgba(184, 164, 142, 0.4);
+    gap: 0.5rem;
+}
+
+.mobileSaidbarMenu {
+    position: absolute;
+    width: 19rem;
+    background-color: rgba(33, 30, 28, 1);
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    z-index: 1000;
+    transform: translateX(0px);
+    transition: all 1s ease-in-out;
+    align-items: center;
+    border-bottom-right-radius: 4px;
+}
+
+
+
+.mobileSaidbarClose {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.MobileMenu {
+    transform: translateX(-30rem);
+}
+
+.mobileTopSaidbarMenu {
+    display: flex;
+    align-items: center;
+    gap: 4.25rem;
+    margin-bottom: 0.62rem;
+    margin-top: -10px;
+}
+
+.mobileSaidbarButton div {
+    width: 1.25rem;
+    height: 0.1rem;
+    border-radius: 2px;
+    background-image: linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+}
+
+.mobileSaidbarButton div:nth-of-type(even) {
+    width: 0.87rem;
+}
+
 .topNavbar {
     width: 100%;
     display: flex;
@@ -57,6 +134,57 @@
     border: none;
     cursor: pointer;
     box-shadow: 0px 0px 10px 2px rgba(184, 164, 142, 0.4);
+}
+
+.mobileNavbarBlock {
+    width: 100%;
+}
+
+.mobileNavbarBlock li {
+    height: 2.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.78rem;
+}
+
+.mobileNavbarButton {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    align-items: center;
+    gap: 1.5rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(184, 164, 142, 0.4);
+}
+
+.mobileNavbarBlockMenuText:hover{
+     background-image: linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+.mobileCatalogMenu {
+    background-color: rgba(43, 40, 37, 1);
+
+
+    width: 100%;
+    background-image: linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.mobileCatalogMenu:hover {
+    color: black;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: #000;
+    background-image: linear-gradient(to right, #C09E6C, #FFEBCC, #BF936B);
+
 }
 
 .catalogNavbar {
@@ -155,5 +283,17 @@
 
         gap: 5vw;
     }
+
+}
+
+@media(max-width:480px) {
+    .navbar {
+        display: none;
+    }
+
+    .navbar-mobile {
+        display: flex;
+    }
+
 
 }

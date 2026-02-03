@@ -4,6 +4,7 @@ const Catalog = () => {
   const [open, setOpen] = useState(false);
 
   return (
+    <>
     <div className="catalogWrapper">
       <button
         className="navbarButton catalogNavbar"
@@ -29,6 +30,8 @@ const Catalog = () => {
         </div>
       )}
     </div>
+   
+    </>
   );
 };
 

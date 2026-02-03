@@ -1,6 +1,6 @@
 import React from 'react'
-import Input from './input'
-import Catalog from './catalog'
+import Input from '../input'
+import Catalog from '../catalog'
 import Link from 'next/link'
 const BotomNavbar = () => {
   return (
