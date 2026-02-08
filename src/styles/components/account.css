@@ -1,0 +1,224 @@
+/* Аккаунт: вход и регистрация (Figma 21-354), дашборд (25-721) */
+.account-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+.account-page__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(118deg, rgba(192, 158, 108, 1), rgba(255, 235, 204, 1), rgba(191, 147, 107, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.account-crumbs {
+  color: #BEAE97;
+  font-size: 0.875rem;
+  margin-bottom: 32px;
+}
+
+.account-crumbs a:hover {
+  text-decoration: underline;
+}
+
+.account-forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .account-forms {
+    grid-template-columns: 1fr;
+  }
+}
+
+.account-form {
+  background: rgba(33, 30, 28, 0.6);
+  border: 1px solid rgba(190, 174, 151, 0.2);
+  border-radius: 4px;
+  padding: 24px;
+}
+
+.account-form__heading {
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: linear-gradient(118deg, rgba(192, 158, 108, 1), rgba(255, 235, 204, 1), rgba(191, 147, 107, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.account-form__bonus {
+  font-size: 0.875rem;
+  color: #BEAE97;
+  margin-bottom: 16px;
+}
+
+.account-form__field {
+  margin-bottom: 16px;
+}
+
+.account-form__label {
+  display: block;
+  font-size: 0.875rem;
+  color: #BEAE97;
+  margin-bottom: 6px;
+}
+
+.account-form__input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  color: #BEAE97;
+  background: transparent;
+  border: 1px solid rgba(190, 174, 151, 0.3);
+  border-radius: 4px;
+  outline: none;
+}
+
+.account-form__input:focus {
+  border-color: rgba(192, 158, 108, 0.8);
+}
+
+.account-form__input::placeholder {
+  color: rgba(190, 174, 151, 0.5);
+}
+
+.account-form__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.account-form__checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #C09E6C;
+}
+
+.account-form__link {
+  font-size: 0.875rem;
+  color: #BEAE97;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.account-form__link:hover {
+  text-decoration: underline;
+}
+
+.account-form__submit {
+  width: 100%;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #211E1C;
+  background: linear-gradient(118deg, rgba(192, 158, 108, 1), rgba(255, 235, 204, 1), rgba(191, 147, 107, 1));
+  border: 1px solid rgba(192, 158, 108, 0.5);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.account-form__submit:hover {
+  opacity: 0.95;
+}
+
+.account-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.account-form__gender {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.account-form__gender label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #BEAE97;
+  cursor: pointer;
+}
+
+.account-form__error {
+  font-size: 0.875rem;
+  color: #E05B49;
+  margin-top: 8px;
+}
+
+.account-form__success {
+  font-size: 0.875rem;
+  color: #7cb87c;
+  margin-top: 8px;
+}
+
+/* Дашборд (когда пользователь в аккаунте) */
+.account-dashboard {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.account-dashboard__welcome {
+  font-size: 1rem;
+  color: #BEAE97;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex: 1 1 100%;
+}
+
+.account-dashboard__menu {
+  min-width: 240px;
+  background: rgba(33, 30, 28, 0.6);
+  border: 1px solid rgba(190, 174, 151, 0.2);
+  border-radius: 4px;
+  padding: 8px 0;
+}
+
+.account-dashboard__menu-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 0.9375rem;
+  color: #BEAE97;
+  text-decoration: none;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.account-dashboard__menu-link:hover {
+  background: rgba(190, 174, 151, 0.1);
+}
+
+.account-dashboard__menu-link--active {
+  background: rgba(33, 30, 28, 0.9);
+  color: #BEAE97;
+}
+
+.account-dashboard__content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.account-profile-form .account-form__field {
+  max-width: 400px;
+}

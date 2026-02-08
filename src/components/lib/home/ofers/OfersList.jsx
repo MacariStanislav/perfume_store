@@ -1,26 +1,54 @@
-import React from 'react'
-import ofersImages from './ofersImages'
+'use client'
 
-const OfersList = () => {
-    return (
-        <ul className="ofersList">
-            {ofersImages.map((item, index) => (
-                <li key={index} className="ofersElement">
-                    <img
-                        src={item.imgURL}
-                        className="ofersImage"
-                    />
+import React, { useMemo } from 'react'
+import { useCart } from '@/context/CartContext'
+import { useProducts } from '@/lib/useProducts'
 
-                    <span className="ofersTopText">{item.topTxt}</span>
+const OFERS_CONFIG = [
+  { imgURL: '/ofers/ofersWoman.png', topTxt: 'Для неё', category: 'female' },
+  { imgURL: '/ofers/ofersMan.png', topTxt: 'Для него', category: 'male' },
+  { imgURL: '/ofers/ofersUnisex.png', topTxt: 'Унисекс', category: 'unisex' },
+]
 
-                    <div className="ofersBottom">
-                        <p className="ofersBottomText">{item.bottomTxt}</p>
-                        <button className="ofersButton"><span>В КОРЗИНУ </span></button>
-                    </div>
-                </li>
-            ))}
-        </ul>
-    )
+export default function OfersList() {
+  const { addItem } = useCart()
+  const { products } = useProducts()
+
+  const ofersItems = useMemo(() => {
+    return OFERS_CONFIG.map(({ imgURL, topTxt, category }) => {
+      const product = products.find((p) => p.category === category) || products[0]
+      return {
+        imgURL,
+        topTxt,
+        bottomTxt: product?.name ?? '',
+        product: product ? { ...product, volume: 30 } : null,
+      }
+    })
+  }, [products])
+
+  const handleAdd = (product) => {
+    if (!product) return
+    addItem({ ...product, volume: 30 })
+  }
+
+  return (
+    <ul className="ofersList">
+      {ofersItems.map((item, index) => (
+        <li key={index} className={`ofersElement ${index === 0 ? 'ofersElement--large' : ''}`}>
+          <img src={item.imgURL} alt="" className="ofersImage" />
+          <span className="ofersTopText">{item.topTxt}</span>
+          <div className="ofersBottom">
+            <p className="ofersBottomText">{item.bottomTxt}</p>
+            <button
+              type="button"
+              className="ofersButton"
+              onClick={() => handleAdd(item.product)}
+            >
+              <span>В корзину</span>
+            </button>
+          </div>
+        </li>
+      ))}
+    </ul>
+  )
 }
-
-export default OfersList

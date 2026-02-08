@@ -1,13 +1,15 @@
 'use client'
 
-import React, { useMemo, useState } from 'react'
+import React, { useState, useMemo } from 'react'
+import Link from 'next/link'
 import CatalogFilter from '@/components/lib/catalog/CatalogFilter'
 import CatalogCard from '@/components/lib/catalog/CatalogCard'
 import { useProducts } from '@/lib/useProducts'
+import '@/styles/components/catalog-section.css'
 import '@/styles/components/catalog-filter.css'
 
-export default function CatalogPage() {
-  const { products, loading, error } = useProducts()
+export default function CatalogPreview() {
+  const { products, loading } = useProducts()
   const [filters, setFilters] = useState({ gender: [], priceMin: '', priceMax: '' })
 
   const filteredProducts = useMemo(() => {
@@ -27,25 +29,40 @@ export default function CatalogPage() {
   }, [products, filters])
 
   return (
-    <div className="catalog-page">
+    <section className="catalog-page" aria-labelledby="catalog-title">
       <CatalogFilter filters={filters} onFilterChange={setFilters} />
       <div className="catalog-grid-wrap">
-        <h1 className="catalog-page__title">Каталог</h1>
-        {loading && <p style={{ color: '#BEAE97', marginBottom: 16 }}>Загрузка каталога...</p>}
-        {error && <p style={{ color: '#E05B49', marginBottom: 16 }}>Не удалось загрузить каталог. Показаны сохранённые данные.</p>}
+        <h2 id="catalog-title" className="catalog-page__title">
+          Каталог
+        </h2>
+        {loading && <p style={{ color: '#BEAE97', marginBottom: 16 }}>Загрузка...</p>}
         <div className="catalog-grid">
           {filteredProducts.map((product, index) => (
             <CatalogCard
               key={product.id}
               product={product}
-              featured={index === 0}
+              featured={product.featured}
             />
           ))}
         </div>
         {filteredProducts.length === 0 && (
-          <p style={{ color: '#BEAE97', marginTop: 24 }}>По выбранным фильтрам товаров не найдено.</p>
+          <p style={{ color: '#BEAE97', marginTop: 16 }}>По выбранным фильтрам товаров не найдено.</p>
         )}
+        <p style={{ textAlign: 'center', marginTop: '24px' }}>
+          <Link
+            href="/catalog"
+            style={{
+              background: 'linear-gradient(118deg, rgba(192, 158, 108, 1), rgba(255, 235, 204, 1), rgba(191, 147, 107, 1))',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              fontWeight: 600,
+            }}
+          >
+            Смотреть весь каталог →
+          </Link>
+        </p>
       </div>
-    </div>
+    </section>
   )
 }

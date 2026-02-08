@@ -250,8 +250,34 @@ backdrop-filter: blur(30px);
 }
 
 .input input:focus {
-    outline: none;
-    box-shadow: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-cart-wrap {
+  position: relative;
+}
+
+.navbar-cart-wrap a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+  color: #1C1A17;
+  background: linear-gradient(144deg, rgba(192, 158, 108, 1), rgba(255, 235, 204, 1), rgba(191, 147, 107, 1));
+  border-radius: 9px;
 }
 
 @media (max-width: 1024px) {

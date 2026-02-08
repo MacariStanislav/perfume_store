@@ -1,0 +1,129 @@
+/* Footer по макету Figma: Интернет магазин - Парфюмерии */
+.footer {
+  background-color: #12110F;
+  color: #BEAE97;
+  padding: 30px 80px 60px;
+  margin-top: auto;
+}
+
+.footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.footer__logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__row {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.footer__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #37332F;
+  border-radius: 4px;
+}
+
+.footer__icon svg {
+  width: 18px;
+  height: 18px;
+  fill: #BEAE97;
+}
+
+.footer__text {
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.36;
+  color: #BEAE97;
+}
+
+.footer__company {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  max-width: 250px;
+}
+
+.footer__copyright {
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.footer__copyright a {
+  transition: opacity 0.2s;
+}
+
+.footer__copyright a:hover {
+  opacity: 0.8;
+  background-image: linear-gradient(118deg, rgba(192, 158, 108, 1), rgba(255, 235, 204, 1), rgba(191, 147, 107, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 30px 40px 40px;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 24px 20px 32px;
+  }
+
+  .footer__inner {
+    gap: 40px;
+  }
+
+  .footer__text {
+    font-size: 16px;
+  }
+}

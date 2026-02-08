@@ -1,0 +1,151 @@
+/* Фильтр каталога по макету Figma */
+.catalog-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 80px 60px;
+  display: flex;
+  gap: 20px;
+}
+
+.catalog-filter {
+  flex-shrink: 0;
+  width: 305px;
+  background-color: #211E1C;
+  border-radius: 4px;
+  box-shadow: 0px 9px 15px 0px rgba(116, 107, 90, 0.41);
+  overflow: hidden;
+}
+
+.catalog-filter__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+  padding: 6px 20px;
+  background-color: #36332E;
+  border: 1px solid #D6B88D;
+  border-radius: 4px;
+}
+
+.catalog-filter__title {
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.22;
+  background: linear-gradient(118deg, rgba(192, 158, 108, 1), rgba(255, 235, 204, 1), rgba(191, 147, 107, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.catalog-filter__body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.catalog-filter__section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.catalog-filter__section-title {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.22;
+  background: linear-gradient(118deg, rgba(192, 158, 108, 1), rgba(255, 235, 204, 1), rgba(191, 147, 107, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.catalog-filter__checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.catalog-filter__checkbox {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: #C09E6C;
+  cursor: pointer;
+}
+
+.catalog-filter__label {
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #BEAE97;
+}
+
+.catalog-filter__price-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-size: 16px;
+  color: #BEAE97;
+}
+
+.catalog-filter__price-input {
+  width: 100%;
+  max-width: 120px;
+  padding: 8px 12px;
+  background: #2B2825;
+  border: 1px solid #D6B88D;
+  border-radius: 4px;
+  color: #BEAE97;
+  font-size: 14px;
+}
+
+.catalog-filter__price-input::placeholder {
+  color: rgba(190, 174, 151, 0.6);
+}
+
+.catalog-grid-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.catalog-page__title {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.22;
+  margin-bottom: 24px;
+  background: linear-gradient(118deg, rgba(192, 158, 108, 1), rgba(255, 235, 204, 1), rgba(191, 147, 107, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.catalog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .catalog-page {
+    flex-direction: column;
+    padding: 24px 40px 40px;
+  }
+
+  .catalog-filter {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-page {
+    padding: 16px 20px 32px;
+  }
+}
