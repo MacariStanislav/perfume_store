@@ -2,7 +2,7 @@
 
 import React from 'react'
 import SaidbarMenu from './saidbarMenu'
-import Input from '../input'
+import InputMobile from '../inputMobile/InputMobile'
 import CartLink from '../CartLink'
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ export default function MobileNavbar() {
   return (
     <div className="mobileNavbar">
       <SaidbarMenu />
-      <Input />
+      <InputMobile />
       <Link href="/"><img src="/logo.svg" alt="" /></Link>
       <ul>
         <li>
